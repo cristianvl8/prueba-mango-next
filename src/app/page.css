@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    grid-gap: 40px;
+    background-color: white;
+  }
+  
+.button {
+    display: block;
+    width: 142px;
+    background: #000;
+    text-align: center;
+    color: #fff;
+    padding: 10px 24px;
+    cursor: pointer;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #666;
+    transition: all 0.25s cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition: all 0.25s cubic-bezier(.455,.03,.515,.955);
+}
