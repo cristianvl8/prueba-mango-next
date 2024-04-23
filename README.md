@@ -4,7 +4,7 @@ Este repositorio contiene la solución a una prueba técnica realizada como part
 
 ## Descripción del Proyecto
 
-El proyecto consiste en desarrollar un custom slider con react. 
+El proyecto consiste en desarrollar un custom slider con Next js. 
 
 ## Tecnologías Utilizadas
 
