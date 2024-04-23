@@ -36,39 +36,36 @@ El proyecto consiste en desarrollar un custom slider con Next js.
 
 La prueba se ha realizado utilizando Next js 13, esto habilita el uso del router app así como de los server / client components.
 
-De este modo, las páginas exercise 1 y exercise 2 son server components. Estos componentes son asíncronos y se encargan del fetcheo de los datos iniciales del slider.
+De este modo, las páginas exercise 1 y exercise 2 son server components. Estos componentes son asíncronos y se encargan del fetcheo de los datos iniciales del slider. Además en esta prueba, no he usado react query porque Next js por detrás ya se encarga de la gestión de la cache. Quizás para aplicaciones más complejas en producción se podría estudiar el uso de SWR, la herramienta de vercel que soluciona la misma casuística que React Query (la gestión del estado asíncrono de las aplicaciones web)
 
-A su vez, estas páginas renderizan el componente Slider. Este componente obligatoriamente hace uso de la directiva use client porque necesita de funcionalidades de React que únicamente se encuentran en el lado del cliente, como por ejemplo los hooks (useState, useEffect, useRef...) necesarios para el correcto funcionamiento del slider.
+Las páginas exercise 1 y exercise 2 renderizan el componente Slider. Este componente obligatoriamente hace uso de la directiva use client porque necesita de funcionalidades de React que únicamente se encuentran en el lado del cliente, como por ejemplo los hooks (useState, useEffect, useRef...) necesarios para el correcto funcionamiento del slider.
 
 ## Objetivos
 
 Mi foco en la realización de esta prueba ha sido centrarme en el clean code y en la separación de responsabilidades. 
 He procurado darle a la aplicación una distribución de carpetas y archivos que sigan las buenas prácticas de desarrollo.
 
-En lo relativo al componente Slider que es la base de esta prueba técnica, he procurado separar las capa de la lógica y la capa presentacional
-con el objetivo de facilitar su legibilidad. He procurado cumplir todos los requerimientos que aparecían en los requisitos de la prueba así 
-como facilitado una serie de tests utilizando jest y react testing library.
+En lo relativo al componente Slider que es la base de esta prueba técnica, he procurado separar las capa de la lógica y la capa presentacional con el objetivo de facilitar su legibilidad. 
+
+He procurado cumplir todos los requerimientos que aparecían en los requisitos de la prueba así como facilitado una serie de tests utilizando jest y react testing library.
 
 ## Problemas
 
-Uno de los retos que he encontrado
-ha sido la gestión de eventos del raton para controlar el slider así como los eventos "touch" de dispositivos táctiles.
+Uno de los retos que he encontrado ha sido la gestión de eventos del raton para controlar el slider así como los eventos "touch" de dispositivos táctiles.
 
-También a la hora de realizar algunos test unitarios en el componente slider he encontrado problemas a la hora de simular con precisión
-los eventos de drag. De hecho uno de los test (el número 4) falla por esto mismo.
+También a la hora de realizar algunos test unitarios en el componente slider he encontrado problemas a la hora de simular con precisión los eventos de drag. De hecho uno de los test (el número 4) falla por esto mismo.
 
 ## Mejoras
 
 De contar con mayor tiempo, habría hecho hincapié en:
 
 - Aumentar el número de test unitarios. Además creo que añadir en este componente pruebas funcionales con Cypress sería conveniente dada la dificultad de gestionar eventos tan precisos como el drag del slider.
-- Integrar algún servicio de mock api que no funcione únicamente en local
+- Integrar algún servicio de mock api que no funcione únicamente en local.
 - Dedicar mayor tiempo a los estilos, aplicar BEM con SAAS o usar una estrategia de css modules u otro sistema de organización de estilos. 
 
 ## Conclusiones
 
-He disfrutado realizando la prueba técnica ya que he aprendido mucho a la hora de montar un componente tan complejo como es un slider desde cero. He necesitado investigar y comprender mejor diferentes eventos
-así como a realizar los cáculos necesarios para el reposicionamiento de los thumbs. 
+He disfrutado realizando la prueba técnica ya que he aprendido mucho a la hora de montar un componente tan complejo como es un slider desde cero. He necesitado investigar y comprender mejor diferentes eventos así como a realizar los cáculos necesarios para el reposicionamiento de los thumbs. 
 
 Además, el uso de Next js 13 te habilita para usar las novedades que incluye React en su última versión y que claramente van a marcar las guías de cómo organizar aplicaciones web basadas en React a partir de ahora.
 
