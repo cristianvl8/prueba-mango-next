@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Prueba Técnica Mango
 
-## Getting Started
+Este repositorio contiene la solución a una prueba técnica realizada como parte del proceso de selección de Mango.
 
-First, run the development server:
+## Descripción del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+El proyecto consiste en desarrollar un custom slider con react. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tecnologías Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next js 13
+- Typescript
+- React
+- CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Instrucciones de Uso
 
-## Learn More
+1. Clona el repositorio.
+2. Escribe en la terminal npm i para instalar las dependencias necesarias
+3. Levanta el mock server con npm run mock:server
+4. Levanta el cliente con npm run dev
+5. Lanza los test con npm run test
+6. Ve al navegador y dirígete a http://localhost:3000/
 
-To learn more about Next.js, take a look at the following resources:
+7. La prueba se encuentra desplegada en Vercel (https://prueba-mango-next.vercel.app/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Herramientas utilizadas
 
-## Deploy on Vercel
+1. Next js CLI
+2. Uso de estilos: Se ha utilizado CSS para montar unos estilos básicos. 
+3. Uso de Typescript: Se ha usado typescript ya que es una herramienta fundamental en cualquier aplicación actual de react.
+4. Uso de Librerias Externas: Json Server para montar un server mock y así poder inicializar el slider con los valores de una fake API.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Estructura Next js 13
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+La prueba se ha realizado utilizando Next js 13, esto habilita el uso del router app así como de los server / client components.
+
+De este modo, las páginas exercise 1 y exercise 2 son server components. Estos componentes son asíncronos y se encargan del fetcheo de los datos iniciales del slider.
+
+A su vez, estas páginas renderizan el componente Slider. Este componente obligatoriamente hace uso de la directiva use client porque necesita de funcionalidades de React que únicamente se encuentran en el lado del cliente, como por ejemplo los hooks (useState, useEffect, useRef...) necesarios para el correcto funcionamiento del slider.
+
+## Objetivos
+
+Mi foco en la realización de esta prueba ha sido centrarme en el clean code y en la separación de responsabilidades. 
+He procurado darle a la aplicación una distribución de carpetas y archivos que sigan las buenas prácticas de desarrollo.
+
+En lo relativo al componente Slider que es la base de esta prueba técnica, he procurado separar las capa de la lógica y la capa presentacional
+con el objetivo de facilitar su legibilidad. He procurado cumplir todos los requerimientos que aparecían en los requisitos de la prueba así 
+como facilitado una serie de tests utilizando jest y react testing library.
+
+## Problemas
+
+Uno de los retos que he encontrado
+ha sido la gestión de eventos del raton para controlar el slider así como los eventos "touch" de dispositivos táctiles.
+
+También a la hora de realizar algunos test unitarios en el componente slider he encontrado problemas a la hora de simular con precisión
+los eventos de drag. De hecho uno de los test (el número 4) falla por esto mismo.
+
+## Mejoras
+
+De contar con mayor tiempo, habría hecho hincapié en:
+
+- Aumentar el número de test unitarios. Además creo que añadir en este componente pruebas funcionales con Cypress sería conveniente dada la dificultad de gestionar eventos tan precisos como el drag del slider.
+- Integrar algún servicio de mock api que no funcione únicamente en local
+- Dedicar mayor tiempo a los estilos, aplicar BEM con SAAS o usar una estrategia de css modules u otro sistema de organización de estilos. 
+
+## Conclusiones
+
+He disfrutado realizando la prueba técnica ya que he aprendido mucho a la hora de montar un componente tan complejo como es un slider desde cero. He necesitado investigar y comprender mejor diferentes eventos
+así como a realizar los cáculos necesarios para el reposicionamiento de los thumbs. 
+
+Además, el uso de Next js 13 te habilita para usar las novedades que incluye React en su última versión y que claramente van a marcar las guías de cómo organizar aplicaciones web basadas en React a partir de ahora.
+
+Sin duda ha sido una experiencia enriquecedora y me gustaría poder debatir más en detalle todo el desarrollo planteado.
+
+Muchísimas gracias por vuestro tiempo.
